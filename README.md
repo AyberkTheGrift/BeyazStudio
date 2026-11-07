@@ -5,7 +5,9 @@ importing datasets, training, evaluating and running detection, all without the 
 
 > This repository is a project showcase. The software is not distributed publicly.
 
-![Detection on buoy photos](docs/detection.jpg)
+**Current version: 1.3** — new "letterpress" interface with day and night themes. See [release notes](#release-notes).
+
+![Detection on buoy photos, day theme](docs/detection.jpg)
 
 ## The network
 
@@ -37,7 +39,7 @@ More varied data is the next step.
 
 ## The app
 
-![Training page](docs/training.jpg)
+![Overview page](docs/overview.jpg)
 
 - **Datasets:** imports YOLO `data.yaml` folders, or PolyMark / Roboflow ZIP files without unpacking them, and
   shows per-class statistics and labeled previews.
@@ -46,10 +48,37 @@ More varied data is the next step.
 - **Models:** per-class AP50, training history, evaluation on any dataset.
 - **Detection:** works on images, folders, video and live camera. A threshold slider filters results instantly
   without re-running the model. Exports annotated images, YOLO labels and a CSV summary.
+- **PolyMark Studio link:** datasets exported from PolyMark Studio appear in Beyaz Studio on their own, already
+  selected on the Training page.
+- **Interface:** an antique letterpress look: paper and ink colors, engraved typefaces, double-ruled frames. Day
+  (paper) and night (ink) themes, an ink-wash transition and a rubber-stamp mark when a training run sets a new best
+  score. Motion effects can be turned off in Settings.
 - **Stack:** PyTorch, PySide6 and OpenCV, packaged with PyInstaller together with the CUDA runtime, so no Python
   installation is needed.
 
-![Overview](docs/overview.jpg)
+![Detection page, night theme](docs/detection-night.jpg)
+
+## Release notes
+
+### 1.3 (November 2026)
+- Datasets sent from PolyMark Studio are picked up live: a notice appears and the new set is preselected for training.
+- The app remembers the last used workspace folder.
+- New logo and app icon.
+
+### 1.2 (November 2026)
+- Completely redesigned interface: the sidebar is replaced by a centered masthead and menu. Paper/ink palette,
+  Texturina, Oswald and Cormorant SC typefaces, double-ruled cards, a dial-style progress ring and hatched charts.
+- Day and night themes, switchable from the masthead.
+- Motion effects: an ink wash on start-up and theme change, and a rubber stamp on the "best score" tile when
+  training improves. They can be switched off in Settings.
+
+### 1.1 (October 2026)
+- **Mask** task: instance segmentation with a prototype-mask head, trained on polygon labels.
+- PolyMark / Roboflow ZIP files can be imported directly.
+- Box training reproduces the previous version bit for bit.
+
+### 1.0 (October 2026)
+- First desktop release: datasets, training, models and detection pages.
 
 ## Author
 
